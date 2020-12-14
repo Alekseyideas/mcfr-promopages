@@ -18,7 +18,7 @@ $('document').ready(() => {
             slidesToShow: 1,
             slidesToScroll: 1,
             // dots: true
-          }
+          },
         },
         {
           breakpoint: 600,
@@ -27,27 +27,26 @@ $('document').ready(() => {
             slidesToScroll: 1,
             arrows: false,
             autoplay: true,
-
-          }
+          },
         },
-      ]
+      ],
     });
 
-    if(window.innerWidth > 1100) {
-      $(cls).on('afterChange', function(event, slick, currentSlide, nextSlide){
-        $(`${cls} .slick-slide`).removeClass('slick-active-center');
-        $(`${cls} .slick-active`).eq(2).addClass('slick-active-center');
-      }).trigger('afterChange');
+    if (window.innerWidth > 1100) {
+      $(cls)
+        .on('afterChange', function (event, slick, currentSlide, nextSlide) {
+          $(`${cls} .slick-slide`).removeClass('slick-active-center');
+          $(`${cls} .slick-active`).eq(2).addClass('slick-active-center');
+        })
+        .trigger('afterChange');
     }
-    
-  }
+  };
 
   createSlider('#experts-slider');
   createSlider('#experts-slider2');
-  
+
   $('a[data-slide]').click(function (e) {
     e.preventDefault();
-
     const slideno = $(this).data('slide');
     // const count = $('a[data-slide]').length;
     $('.item__badge').removeClass('active');
@@ -58,22 +57,22 @@ $('document').ready(() => {
     console.log($('.site img').height());
     switch (+slideno) {
       case 2:
-        return fnGoTOSlide(80);
+        return fnGoTOSlide(350);
       case 3:
-        return fnGoTOSlide(180);
+        return fnGoTOSlide(900);
       case 4:
-        return fnGoTOSlide(700);
-      case 5:
-        return fnGoTOSlide(820);
-      case 6:
-        return fnGoTOSlide(1300);
-      case 7:
-        return fnGoTOSlide(3500);
-      case 8:
-        return fnGoTOSlide(3180);
+        return fnGoTOSlide(0);
+      // case 5:
+      //   return fnGoTOSlide(820);
+      // case 6:
+      //   return fnGoTOSlide(1300);
+      // case 7:
+      //   return fnGoTOSlide(3500);
+      // case 8:
+      //   return fnGoTOSlide(3180);
       // return fnGoTOSlide($('.site img').height());
       default:
-        return fnGoTOSlide(0);
+        return fnGoTOSlide(50);
     }
 
     function fnGoTOSlide(n) {
@@ -88,7 +87,7 @@ $('document').ready(() => {
     //   +slideno > 3 ? slideno - 2 : slideno - 1
     // );
   });
-
+  $('a[data-slide]')[0].click();
   $('.slideRev').slick({
     infinite: true,
     autoplay: true,
@@ -97,9 +96,8 @@ $('document').ready(() => {
         breakpoint: 600,
         settings: {
           arrows: false,
-
-        }
+        },
       },
-    ]
+    ],
   });
 });
