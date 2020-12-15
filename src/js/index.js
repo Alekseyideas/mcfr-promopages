@@ -57,9 +57,9 @@ $('document').ready(() => {
     console.log($('.site img').height());
     switch (+slideno) {
       case 2:
-        return fnGoTOSlide(350);
+        return fnGoTOSlide(370);
       case 3:
-        return fnGoTOSlide(900);
+        return fnGoTOSlide(1200);
       case 4:
         return fnGoTOSlide(0);
       // case 5:
@@ -72,7 +72,7 @@ $('document').ready(() => {
       //   return fnGoTOSlide(3180);
       // return fnGoTOSlide($('.site img').height());
       default:
-        return fnGoTOSlide(50);
+        return fnGoTOSlide(0);
     }
 
     function fnGoTOSlide(n) {

@@ -21,7 +21,8 @@
     max-height: 523px;
     overflow: hidden;
     margin-top: 28px;
-
+    background: white;
+    padding-top: 20px;
     @include maxLg() {
       font-size: 25px;
       display: none;
